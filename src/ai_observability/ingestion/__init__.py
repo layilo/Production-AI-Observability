@@ -1,0 +1,2 @@
+"""Trace ingestion pipeline."""
+

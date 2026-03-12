@@ -1,0 +1,31 @@
+services:
+  observability-api:
+    build: .
+    container_name: ai-observability-api
+    environment:
+      AI_OBS_ENVIRONMENT: docker-demo
+      AI_OBS_DB_PATH: /data/observability.db
+      AI_OBS_OTLP_ENABLED: "false"
+    ports:
+      - "8000:8000"
+    volumes:
+      - observability-data:/data
+  jaeger:
+    image: jaegertracing/all-in-one:1.57
+    container_name: ai-observability-jaeger
+    ports:
+      - "16686:16686"
+      - "4318:4318"
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    container_name: ai-observability-prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    volumes:
+      - ./alerts/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./alerts/ai-observability-rules.yml:/etc/prometheus/ai-observability-rules.yml:ro
+    ports:
+      - "9090:9090"
+
+volumes:
+  observability-data:

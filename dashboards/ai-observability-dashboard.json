@@ -1,0 +1,25 @@
+{
+  "title": "AI Observability Overview",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Trace Volume",
+      "query": "sum(ai_observability_traces_ingested_total)"
+    },
+    {
+      "type": "timeseries",
+      "title": "P95 Trace Latency",
+      "query": "histogram_quantile(0.95, sum(rate(ai_observability_trace_duration_ms_bucket[5m])) by (le))"
+    },
+    {
+      "type": "timeseries",
+      "title": "Token Consumption",
+      "query": "sum(rate(ai_observability_tokens_total[5m])) by (workflow_type)"
+    },
+    {
+      "type": "timeseries",
+      "title": "Estimated Cost",
+      "query": "sum(rate(ai_observability_cost_total[5m])) by (workflow_type)"
+    }
+  ]
+}
