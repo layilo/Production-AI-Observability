@@ -5,6 +5,9 @@ Production-grade AI observability, trace-driven debugging, incident triage, and 
 - Demo mode: synthetic chat, RAG, and agent traces with realistic latency, token, cost, retry, and failure behavior.
 - Real mode: OpenTelemetry-aligned instrumentation with OTLP HTTP export to Jaeger, collectors, or compatible backends.
 
+## License
+Licensed under `PolyForm Noncommercial 1.0.0`. Commercial use is not permitted. See [LICENSE](/c:/Users/Aaron.Lam/Private/Repo/ai observe/Production-AI-Observability/LICENSE).
+
 ## What It Provides
 - End-to-end AI trace ingestion for prompts, model calls, retrieval, tools, guardrails, and downstream logic
 - Privacy-aware redaction and configurable deterministic sampling

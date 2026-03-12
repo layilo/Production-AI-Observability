@@ -3,7 +3,7 @@ Name: production-ai-observability
 Version: 0.1.0
 Summary: Production-grade AI observability and trace-driven debugging framework.
 Author: OpenAI Codex
-License: MIT
+License: PolyForm Noncommercial 1.0.0
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 Requires-Dist: fastapi<1.0.0,>=0.115.0
@@ -33,6 +33,9 @@ Production-grade AI observability, trace-driven debugging, incident triage, and 
 
 - Demo mode: synthetic chat, RAG, and agent traces with realistic latency, token, cost, retry, and failure behavior.
 - Real mode: OpenTelemetry-aligned instrumentation with OTLP HTTP export to Jaeger, collectors, or compatible backends.
+
+## License
+Licensed under `PolyForm Noncommercial 1.0.0`. Commercial use is not permitted. See LICENSE.
 
 ## What It Provides
 - End-to-end AI trace ingestion for prompts, model calls, retrieval, tools, guardrails, and downstream logic
